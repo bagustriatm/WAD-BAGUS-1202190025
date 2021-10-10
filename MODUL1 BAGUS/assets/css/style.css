@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+footer {
+	padding: 10px;
+	color: white;
+	background-color: #00a2c6;
+	text-align: center;
+}

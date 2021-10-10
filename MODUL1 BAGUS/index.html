@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Modul 1</title>
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -143,20 +144,40 @@
 						<tr>
 							<div class="form-group row">
 							<td class="left">
-								<label for="inputNumber" class="col col-form-label">Nomor HP</label>
+								<label for="Payment" class="col col-form-label">Pembayaran</label>
 							</td>
 							<td>
-								<div class="col">
-									<input type="text" class="form-control" id="inputNumber" placeholder="">
+								<div class="form-check form-check-inline">
+									<input type="radio" class="form-check-input" for="cash" name="inlineRadioOptions" id="cash" value="tunai">
+									<label class="form-check-label" for="cash">Tunai</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input type="radio" class="form-check-input" for="transfer" name="inlineRadioOptions" id="transfer" value="transfer">
+									<label class="form-check-label" for="transfer">Transfer</label>
 								</div>
 							</td>
 							</div>
 						</tr>
 						<br>
+						<tr>
+							<td class="left">
+								<label for="tipeTest" class="col col-form-label">Jenis Test</label>
+							</td>
+							<td>
+							<select class="form-select col">
+								<option value="pcr">PCR</option>
+								<option value="antibodi">TAntibodi</option>
+								<option value="Rapid">Rapid Test</option>
+							</select>
+							</td>
+						</tr>
 					</table>
 				</form>
 			</article>
 		</section>
 	</main>
+	<footer>
+		<p>Dibuat oleh BAGUS TRI ATMAJA_1202190025</p>
+	</footer>
 </body>
 </html>
