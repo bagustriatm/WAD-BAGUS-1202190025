@@ -7,3 +7,33 @@ footer {
 	background-color: #00a2c6;
 	text-align: center;
 }
+.shower{		
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	margin-left: 100px
+}
+.jumbotron {
+   font-size: 20px;
+   padding: 60px;
+   background-color: #00c8eb;
+   text-align: center;
+   color: white;
+}
+.centered{
+	margin: auto;
+}
+nav a {
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+   color: white;
+}
+#tableReg{
+	margin: auto;
+}
+td{
+	width: 200px;
+	padding-top: 5px;
+}
+#content{
+	margin-left: 50px
+}
