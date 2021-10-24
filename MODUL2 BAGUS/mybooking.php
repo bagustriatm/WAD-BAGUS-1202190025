@@ -14,7 +14,30 @@ $comingDate 	= $_POST['event'] . " " . $_POST['time'];
 $checkoutDate 	= date("d-m-Y H:i", (strtotime($comingDate) + 60 * 60 * $_POST['duration']));
 $building 		= $_POST['building'];
 $phonenumb		= $_POST['phone'];
-$serviceget		= $_POST['service'];
+$duration 		=$_POST['duration'];
+
+$invoice = 0;
+if ($building == 'Nusantara Hall'){
+	$invoice += (2000 * $duration);
+}else if($building == 'Garuda Hall'){
+	$invoice += (2000 * $duration);
+}else if($building == 'Gedung Serba Guna'){
+	$invoice += (500 * $duration);
+}
+	
+
+if (isset($_POST['service'])) {
+    foreach ($_POST['service'] as $service) {
+    if ($service == 'Catering') {
+		$invoice += 700;
+	}
+    if ($service == 'Decoration'){ 
+		$invoice += 450;
+	}
+    if ($service == 'Sound System'){
+		$invoice += 250;} 
+      }
+}
 ?>
 	
 <body>
@@ -59,11 +82,18 @@ $serviceget		= $_POST['service'];
 			  	<td><?php echo $checkoutDate ?></td>
 			  	<td><?php echo $building ?></td>
 				<td><?php echo $phonenumb ?></td>
-				<td><ul> <?php
-							foreach ($serviceget as $service) {
-								echo "<li>$service</li>";}?>
-                    </ul>
+				<td> <ul><?php
+                            if (isset($_POST['service'])) {
+                                foreach ($_POST['service'] as $service) {
+                                    echo "<li>$service</li>";
+                                }
+                            } else {
+                                echo "No Service";
+                            }
+                            ?>
+                     </ul>
 				</td>
+				<td><?= '$' . $invoice ?></td>
 			</tr>
 		  </tbody>
 		</table>

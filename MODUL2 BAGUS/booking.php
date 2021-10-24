@@ -79,11 +79,11 @@
 							<div class="mb-3">
 								<label for="Service" class="form-label">Add Service(s)</label>
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="service" id="Catering">
+									<input class="form-check-input" type="checkbox" name="service[]" value="Catering">
 									<label class="form-check-label" for="Catering">Catering /$700</label><br>
-									<input class="form-check-input" type="checkbox" value="service" id="Decoration">
+									<input class="form-check-input" type="checkbox" name="service[]" value="Decoration">
 									<label class="form-check-label" for="Decoration">Decoration /$450</label><br>
-									<input class="form-check-input" type="checkbox" value="service" id="Sound_System">
+									<input class="form-check-input" type="checkbox" name="service[]" value="Sound_System">
 									<label class="form-check-label" for="Sound_System">Sound System /$250</label>
 								</div>
 							</div>
