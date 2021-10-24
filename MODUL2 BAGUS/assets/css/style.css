@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+nav a {
+   text-decoration: none;
+   color: white;
+	opacity: 0.5;
+}
+nav li{
+	display: inline;
+	padding-left: 20px;
+}
+a:hover{
+	color: white;
+	opacity: 1;
+}
+
+footer {
+	padding: 10px;
+	color: white;
+	background-color: #F8F9FA;
+	text-align: center;
+	padding-bottom: 0;
+}
+footer p{
+	text-decoration: none;
+   	color: black;
+	opacity: 0.75;
+}
+.listready{
+	color: #1B8655;
+}
+.listnotready{
+	color: #DD2034;
+}
