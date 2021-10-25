@@ -14,7 +14,7 @@ $comingDate 	= $_POST['event'] . " " . $_POST['time'];
 $checkoutDate 	= date("d-m-Y H:i", (strtotime($comingDate) + 60 * 60 * $_POST['duration']));
 $building 		= $_POST['building'];
 $phonenumb		= $_POST['phone'];
-$duration 		=$_POST['duration'];
+$dur 		=$_POST['duration'];
 
 $invoice = 0;
 if ($building == 'Nusantara Hall'){
@@ -84,7 +84,7 @@ if (isset($_POST['service'])) {
 				<td><?php echo $phonenumb ?></td>
 				<td> <ul><?php
                             if (isset($_POST['service'])) {
-                                foreach ($_POST['service'] as $service) {
+                                for ($_POST['service'] as $service) {
                                     echo "<li>$service</li>";
                                 }
                             } else {
