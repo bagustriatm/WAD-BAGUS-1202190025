@@ -42,7 +42,7 @@
 						?><img src="<?= $image ?>" alt="nusantara hall" width="500px" style="">
 						<?php else: ?>
 						<img class="rounded mx-auto d-block" src="https://i2.wp.com/hoteldesawisata.co.id/wp-content/uploads/2019/07/Hall-1.jpg" height="350px">
-						<?php ;?>
+						<?php endif;?>
 						
 					</div>
 					<div class="col-6">
