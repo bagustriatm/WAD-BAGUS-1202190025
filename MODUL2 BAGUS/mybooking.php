@@ -105,7 +105,7 @@ if (isset($_POST['service'])) {
 	<br>
 	<br>
 	<footer class="fixed-bottom">
-		<p>Dibuat oleh BAGUS TRI ATMAJA_1202190025</p>
+		<p>Myologi Belajar biologi umum &#169;2020, MyAcademia</p>
 	</footer>
 </body>
 	<script type="application/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
