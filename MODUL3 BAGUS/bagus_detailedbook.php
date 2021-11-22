@@ -136,6 +136,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <!--					<input name="id" value="<?= $data['id_buku'] ?>" hidden>-->
 					<button type="submit" class="btn btn-primary btn-danger" style="width: 100%;" name="delete">Hapus</button>	
 				</form>
+				<a href="bagus_delete.php?id=<?php echo $data['id_buku']?>" class="btn btn-primary btn-danger">Hapus</a>
 				</div>
 				</div>
 			</div>			
