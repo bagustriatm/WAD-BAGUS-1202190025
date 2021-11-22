@@ -13,7 +13,7 @@
 		$imageadd	 = $_POST['gambar'];
 		$tag 		= implode(",", $_POST['tag']);
 		
-		$query = "INSERT INTO buku_table(id_buku, judul_buku, penulis_buku, tahun_terbit, deskripsi, gambar, bahasa, tag) VALUES ('$book_id', '$title', '$author', '$years', '$description', '$imageadd', '$lang','$tag')";
+		$query = "INSERT buku_table(id_buku, judul_buku, penulis_buku, tahun_terbit, deskripsi, gambar, bahasa, tag) VALUES ('$book_id', '$title', '$author', '$years', '$description', '$imageadd', '$lang','$tag')";
 		
 		$insert = mysqli_query($conn, $query);
 	}

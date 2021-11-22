@@ -27,7 +27,7 @@
 
 	<main style="padding-top: 50px">
 	<?php
-	$numrow = mysqli_query($conn, $query);
+	$numrow = mysqli_query($con, $query);
 	$row_count = mysqli_num_rows($numrow);?>
 	
 	<?php if($row_count==0):?>	
@@ -55,7 +55,7 @@
 						<div class="card-body">
 							<h5 class="card-title"><?php echo $data['judul_buku'];?></h5>
 							<p class="card-text"><?php echo $data['deskripsi']?></p>
-							<a href="bagus_detailedbook.php?id_buku=<?php echo $data['id_buku'] ?>" class="btn btn-primary">Pelajari Lebih Lanjut</a>
+							<a href="bagus_detailedbook.php?id_buku=<?php echo $data['id'] ?>" class="btn btn-primary">Pelajari Lebih Lanjut</a>
 						</div>
 					</div>
 				</form>
