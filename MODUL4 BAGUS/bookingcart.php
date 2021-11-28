@@ -27,12 +27,6 @@
 		</div>
 		<div class="col-6">
 			<div class="mx-auto" style="width: 200px;">
-<!--
-				<ul type="none">
-					<li class="d-inline"><a href="register.php">Register</a></li>
-					<li class="d-inline" style="padding-left: 20px;"><a href="login.php">Login</a></li>
-				</ul>
--->
 				<ul type="none">
 					<li class="d-inline"><a href="bookingcart.php"><img src="assets/images/cart4.svg" alt="cart"></a></li>
 					<li class="d-inline" style="padding-left: 20px;">
