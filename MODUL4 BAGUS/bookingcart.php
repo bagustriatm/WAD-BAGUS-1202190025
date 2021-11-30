@@ -2,7 +2,7 @@
 	include('config.php');
 	$query = "SELECT * FROM bookings";
 	$select = mysqli_query($conn,$query);
-?>
+?>	
 
 <!doctype html>
 <html>

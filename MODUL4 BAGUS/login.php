@@ -1,9 +1,8 @@
 <?php
+	require 'create.php';
 	include('config.php');
-	$query = "SELECT * FROM users";
-	$select = mysqli_query($conn, $query);
-?>
 
+?>
 <!doctype html>
 <html>
 <head>
@@ -35,39 +34,16 @@
 		</div>
 	</nav>
 <?php
-	if(isset($_GET['login'])){
-			echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-					  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-					  </button>
-				</div>';
+	if(isset($_POST['daftar'])){
+		if(register($_POST)>0){
+			echo "
+        <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            Selamat Anda Berhasil registrasi
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+        ";
+		}
 	}
-	?>
-<?php
-	if(isset($_SESSION['message'])):?>
-	<div class="alert alert-warning alert-dismissible fade show fade in" role="alert">
-		<?= $_SESSION['message'];?>
-		<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-<?php
-	unset($_SESSION['message']);
-	endif;
-	?>
-	
-<?php
-	if(isset($_SESSION['registered'])):?>
-	<div class="alert alert-warning alert-dismissible fade show fade in" role="alert">
-		<?= $_SESSION['registered'];?>
-		<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-<?php
-	unset($_SESSION['registered']);
-	endif;
 	?>
 </header>
 <!--MAIN MAIN MAIN-->
@@ -91,7 +67,7 @@
 					</div>
 					<!--submit-->
 						<div style="padding-top: 10px;" class="d-flex justify-content-center">
-							<a href="indexafterlogin.php" type="Submit" class="btn btn-primary" style="width: 35%" name="login">login</a>
+							<button type="Submit" class="btn btn-primary" style="width: 35%" name="login">Login</button>
 						</div>
 				</form>
 				<p class="text-dark text-center">
@@ -102,7 +78,7 @@
 	</section>
 </main>
 <!--FOOTER FOOTER FOOTER-->
-<footer class="mt-auto bg-info fixed-bottom">
+<footer class="mt-auto bg-info bottom-0">
 	<p>&#169; 2021 Copyright: BagusTri_1202190025</p>
 </footer>
 </body>

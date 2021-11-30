@@ -1,7 +1,7 @@
 <?php
+	require 'create.php';
 	include('config.php');
-	$query = "SELECT * FROM users";
-	$select = mysqli_query($conn,$query);
+
 ?>
 
 <!doctype html>
@@ -20,7 +20,7 @@
 <body>
 <!--HEADER HEADER HEADER-->
 <header>
-	<nav class="navbar navbar-expand-lg navbar-info-hover-black fixed-top bg-info ps-5 shadow">
+	<nav class="navbar navbar-expand-lg navbar-info-hover-black static-top bg-info ps-5 shadow">
 		<div class="col-6">
 			<div class="mx-auto" style="width: 200px;">
 				<a href="index.php"><p>EAD Travel</p></a>
@@ -34,16 +34,23 @@
 				</ul>
 			</div>
 		</div>
-	</nav>	
+	</nav>
+<?php
+	if(isset($_POST['daftar'])){
+		if(register($_POST)>0){
+			header('Location: login.php');
+		}
+	}
+	?>
 </header>
 <!--MAIN MAIN MAIN-->
-<main style="padding-top: 50px;padding-bottom: 100px">
+<main style="padding-top: 2px;padding-bottom: 100px">
 	<section style="padding-top:50px">
 		<div class="card rectangle m-auto bg-light">
 			<p class="text-dark text-center">Register</p>
 			<hr style='border-width:2;color:black;background-color:black;width:75%;margin:auto'>
 			<div class="card-body">		
-				<form action="create.php" method="post">
+				<form action="" method="post">
 					<!--nama-->
 					<label for="name" class="form-label" style="padding-left: 10px">Nama</label>
 					<input type="text" class="form-control label" id="name" aria-describedby="name" name="name" placeholder="Masukkan Nama Lengkap" required>

@@ -1,17 +1,19 @@
 <?php
+include('config.php');
 // Register
 function register($data){
     global $conn;
 
     // Get Data
-    $nama = $data["nama"];
+	$id   = rand(1000000000, 9999999999);
+    $nama = $data["name"];
     $email = $data["email"];
-    $nohp = $data["nohp"];
+    $nohp = $data["number"];
     $pwd = $data["password"];
-    $confirm = $data["confirm"];
+    $confirm = $data["passwordkonfi"];
 
     // cek email
-    $email_check = mysqli_query($connect, "SELECT email FROM user WHERE email = '$email'");
+    $email_check = mysqli_query($conn, "SELECT email FROM users WHERE email = '$email'");
 
     if (mysqli_fetch_assoc($email_check)) {
         echo "
@@ -38,10 +40,10 @@ function register($data){
     $pwd = password_hash($pwd, PASSWORD_DEFAULT);
 
     // insert to database
-    mysqli_query($connect, "INSERT INTO user VALUES
-        ('', '$nama', '$email', '$pwd', $nohp)
+    mysqli_query($conn, "INSERT INTO users VALUES
+        ('$id', '$nama', '$email', '$pwd', $nohp)
     ");
 
-    return mysqli_affected_rows($connect);
+    return mysqli_affected_rows($conn);
 }
 ?>
