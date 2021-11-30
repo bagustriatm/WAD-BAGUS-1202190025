@@ -4,7 +4,7 @@
 
 ?>
 <!doctype html>
-<html>
+<html lang="id">
 <head>
 <meta charset="utf-8">
 	
@@ -12,7 +12,7 @@
 <link href="assets/css/bootstrap.min.css.map" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 	
-<title>REGISTRASI</title>
+<title>Login Page</title>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 	<section style="padding-top:10%">
 		<div class="card rectangle m-auto bg-light">
 			<p class="text-dark text-center">Login</p>
-			<hr style='border-width:2;color:black;background-color:black;width:75%;margin:auto'>
+			<hr style='border-width:2px;color:black;background-color:black;width:75%;margin:auto'>
 			<div class="card-body">		
 				<form action="login_config.php" method="post">
 					<!--mail-->
@@ -78,7 +78,7 @@
 	</section>
 </main>
 <!--FOOTER FOOTER FOOTER-->
-<footer class="mt-auto bg-info bottom-0">
+<footer class="mt-auto bg-info bottom-0 position-static">
 	<p>&#169; 2021 Copyright: BagusTri_1202190025</p>
 </footer>
 </body>

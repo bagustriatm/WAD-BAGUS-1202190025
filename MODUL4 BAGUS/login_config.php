@@ -1,17 +1,16 @@
 <?php
 	include('config.php');
-	include('login.php');
 
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
-		$cekEmail = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+		$cekEmail = "SELECT * FROM users WHERE email='$email'";
 		$hub = mysqli_query($conn, $cekEmail);
 		
-		if(mysqli_num_rows($hub)==1){
-			$result = mysqli_query($conn, $hub);
-			
+		if(mysqli_num_rows($hub)===1){
+			$result = mysqli_fetch_assoc($hub);
+
 			if(password_verify($password, $result['password'])){
 				$_SESSION['id'] = $result['id'];
 				$_SESSION['nama'] = $result['nama'];
@@ -30,3 +29,4 @@
 		}
 	}
 ?>
+
