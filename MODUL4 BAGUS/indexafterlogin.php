@@ -1,3 +1,38 @@
+<?php
+session_start();
+include('config.php');
+
+if(isset($_POST['add'])) {
+    $userID = $_SESSION['id'];
+
+    if ($_POST['add'] === 'add01') {
+        $id = rand(000, 999);
+        $nama_tempat = 'Raja Ampat';
+        $lokasi = 'Papua';
+        $harga = 7000000;
+        $date = $_POST['bookingdate01'];
+    } elseif ($_POST['add'] === 'add02') {
+        $id = rand(000, 999);
+        $nama_tempat = 'Gunung Bromo';
+        $lokasi = 'Malang';
+        $harga = 2000000;
+        $date = $_POST['bookingdate02'];
+    } elseif($_POST['add'] === 'add03') {
+        $id = rand(000, 999);
+        $nama_tempat = 'Tanah Lot';
+        $lokasi = 'Bali';
+        $harga = 5000000;
+        $date = $_POST['bookingdate03'];
+    }else{
+        echo error_log();
+    }
+
+    $query = "INSERT INTO bookings VALUES('$id','$userID','$nama_tempat','$lokasi','$harga','$date')";
+    mysqli_query($conn, $query);
+
+}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -7,7 +42,7 @@
 <link href="assets/css/bootstrap.min.css.map" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 	
-<title>REGISTRASI</title>
+<title>EAD Travel</title>
 </head>
 
 <body>
@@ -110,17 +145,14 @@
 <div class="modal fade" id="Modal01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="insertBooking.php" method="post">
+	<form action="" method="post">
       <div class="modal-body">
-			<input type="text" hidden name="place01" value="Raja Ampat">
-			<input type="text" hidden name="city01" value="Papua">
-			<input type="number" hidden name="prize01" value="7000000">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate01" aria-describedby="bookingdate" name="bookingdate01" required> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add">Tambahkan</button>
+        <button type="button" class="btn btn-primary" value="add01" name="add">Tambahkan</button>
       </div>
 	</form>
     </div>
@@ -131,18 +163,14 @@
 <div class="modal fade" id="Modal02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="insertBooking.php" method="post">
+	<form action="" method="post">
       <div class="modal-body">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate02" aria-describedby="bookingdate" name="bookingdate02" required>
-			<input type="text" hidden name="place02" value="Gunung Bromo">
-			<input type="text" hidden name="city02" value="Malang">
-			<input type="number" hidden name="prize02" value="2000000">
-		
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add">Tambahkan</button>
+        <button type="button" class="btn btn-primary" value="add02" name="add">Tambahkan</button>
       </div>
 	</form>
     </div>
@@ -153,18 +181,14 @@
 <div class="modal fade" id="Modal03" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="insertBooking.php" method="post">	
+	<form action="" method="post">
       <div class="modal-body">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate03" aria-describedby="bookingdate" name="bookingdate03" required>
-			<input type="text" hidden name="place03" value="Tanah Lot">
-			<input type="text" hidden name="city03" value="Bali">
-			<input type="number" hidden name="prize03" value="5000000">
-		
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add">Tambahkan</button>
+        <button type="button" class="btn btn-primary" value="add03" name="add">Tambahkan</button>
       </div>
 	</form>
     </div>
