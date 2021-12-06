@@ -1,38 +1,8 @@
 <?php
-session_start();
-include('config.php');
-
-if(isset($_POST['add'])) {
-    $userID = $_SESSION['id'];
-
-    if ($_POST['add'] === 'add01') {
-        $id = rand(000, 999);
-        $nama_tempat = 'Raja Ampat';
-        $lokasi = 'Papua';
-        $harga = 7000000;
-        $date = $_POST['bookingdate01'];
-    } elseif ($_POST['add'] === 'add02') {
-        $id = rand(000, 999);
-        $nama_tempat = 'Gunung Bromo';
-        $lokasi = 'Malang';
-        $harga = 2000000;
-        $date = $_POST['bookingdate02'];
-    } elseif($_POST['add'] === 'add03') {
-        $id = rand(000, 999);
-        $nama_tempat = 'Tanah Lot';
-        $lokasi = 'Bali';
-        $harga = 5000000;
-        $date = $_POST['bookingdate03'];
-    }else{
-        echo error_log();
-    }
-
-    $query = "INSERT INTO bookings VALUES('$id','$userID','$nama_tempat','$lokasi','$harga','$date')";
-    mysqli_query($conn, $query);
-
-}
+    include('config.php');
+    $query= 'SELECT * FROM bookings';
+    $select = mysqli_query($conn,$query);
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -48,7 +18,7 @@ if(isset($_POST['add'])) {
 <body>
 <!--HEADER HEADER HEADER-->
 <header>
-	<nav class="navbar navbar-expand-lg navbar-info-hover-black fixed-top bg-info ps-5 shadow">
+	<nav class="navbar navbar-expand-lg navbar-info-hover-black sticky-top bg-info ps-5 shadow">
 		<div class="col-6">
 			<div class="mx-auto" style="width: 200px;">
 				<a href="indexafterlogin.php"><p>EAD Travel</p></a>
@@ -82,7 +52,7 @@ if(isset($_POST['add'])) {
 				<tr>
 					<td><img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Raja_Ampat%2C_Mutiara_Indah_di_Timur_Indonesia.jpg" alt="raja ampat" width="350px"></td>
 					<td><img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/events/2020/12/22/391ca0b3-f23b-4476-b18b-d19d63f5dcc7-1608634979013-8c313f9e66f333afb59469a021af1ec2.jpg" alt="gunung bromo" width="350px"></td>
-					<td><img src="https://backpackerjakarta.com/wp-content/uploads/2017/03/173-tanah-lot-temple2.jpg" alt="tanah lot" width="350px;" height="233.52px"></td>
+					<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Pura_tanah_lot_sunset_no3.jpg" alt="tanah lot" width="350px;" height="233.52px"></td>
 				</tr>
 				<tr>
 					<td><strong>Raja Ampat, Papua</strong></td>
@@ -145,14 +115,14 @@ if(isset($_POST['add'])) {
 <div class="modal fade" id="Modal01" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="" method="post">
+	<form action="createbooking.php" method="post">
       <div class="modal-body">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate01" aria-describedby="bookingdate" name="bookingdate01" required> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add01" name="add">Tambahkan</button>
+        <button type="submit" class="btn btn-primary" name="add01">Tambahkan</button>
       </div>
 	</form>
     </div>
@@ -163,14 +133,14 @@ if(isset($_POST['add'])) {
 <div class="modal fade" id="Modal02" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="" method="post">
+	<form action="createbooking.php" method="post">
       <div class="modal-body">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate02" aria-describedby="bookingdate" name="bookingdate02" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add02" name="add">Tambahkan</button>
+        <button type="submit" class="btn btn-primary" name="add02">Tambahkan</button>
       </div>
 	</form>
     </div>
@@ -181,20 +151,19 @@ if(isset($_POST['add'])) {
 <div class="modal fade" id="Modal03" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-	<form action="" method="post">
+	<form action="createbooking.php" method="post">
       <div class="modal-body">
 			<label for="bookingdate" class="form-label">Event Date</label>
 			<input type="date" class="form-control" id="bookingdate03" aria-describedby="bookingdate" name="bookingdate03" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" value="add03" name="add">Tambahkan</button>
+        <button type="submit" class="btn btn-primary" name="add03">Tambahkan</button>
       </div>
 	</form>
     </div>
   </div>
 </div>
-
 
 </body>
 <!--SCRIPT-->

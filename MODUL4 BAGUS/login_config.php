@@ -1,7 +1,9 @@
 <?php
+	session_start();
 	include('config.php');
 
 	if(isset($_POST['login'])){
+		global $conn;
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		
@@ -20,7 +22,7 @@
 				
 				header("Location: indexafterlogin.php");
 				exit();
-				
+
 			}else{
 				$_SESSION['message'] = 'Password Salah';
 				header("Location: login.php");

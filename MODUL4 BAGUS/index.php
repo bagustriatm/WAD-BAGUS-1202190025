@@ -40,7 +40,7 @@
 				<tr>
 					<td><img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Raja_Ampat%2C_Mutiara_Indah_di_Timur_Indonesia.jpg" alt="raja ampat" width="350px"></td>
 					<td><img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/original/events/2020/12/22/391ca0b3-f23b-4476-b18b-d19d63f5dcc7-1608634979013-8c313f9e66f333afb59469a021af1ec2.jpg" alt="gunung bromo" width="350px"></td>
-					<td><img src="https://backpackerjakarta.com/wp-content/uploads/2017/03/173-tanah-lot-temple2.jpg" alt="tanah lot" width="350px;" height="233.52px"></td>
+					<td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Pura_tanah_lot_sunset_no3.jpg" alt="tanah lot" width="350px;" height="233.52px"></td>
 				</tr>
 				<tr>
 					<td><strong>Raja Ampat, Papua</strong></td>
