@@ -1,8 +1,16 @@
 <?php
 session_start();
 	include('config.php');
-	$query = "SELECT * FROM users";
-	$select = mysqli_query($conn,$query);
+    $id = $_SESSION['id'];
+	$query = "SELECT * FROM users where id='$id'";
+	$select = mysqli_query($conn, $query);
+    $data = mysqli_fetch_assoc($select);
+
+    $getusername    = $data['nama'];
+    $getnumber      = $data['no_hp'];
+
+    $getemail       = $data['email'];
+
 ?>
 
 <!doctype html>
@@ -48,25 +56,25 @@ session_start();
 <main style="padding-top: 100px;padding-bottom: 100px">
 	<div class="container bg-light shadow p-5">
 		<h2 align="center">Profile</h2>
-			<form action="bagus_create.php" method="post">
+			<form action="" method="post">
 		  		<div class="mb-3 row">
 					<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
 					<div class="col-sm-10">
-			  			<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+			  			<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<?= $getemail?>">
 					</div>
 		  		</div>
 <!--				NAMA-->
 		  		<div class="mb-3 row">
 					<label for="inputName" class="col-sm-2 col-form-label">Nama</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputName" name="" value="">
+						<input type="text" class="form-control" id="inputName" name="" value="<?= $getusername?>">
 					</div>
 		  		</div>
 <!--				NOMER-->
 		  		<div class="mb-3 row">
 					<label for="inputNumber" class="col-sm-2 col-form-label">Nomer Handphone</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputumber" name="">
+						<input type="text" class="form-control" id="inputumber" name="" value="<?= $getnumber?>">
 					</div>
 		  		</div>
 				<hr>

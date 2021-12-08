@@ -18,6 +18,7 @@
 				$_SESSION['nama'] = $result['nama'];
 				$_SESSION['no_hp'] = $result['no_hp'];
 
+
 				$_SERVER['message'] = 'Berhasil Login';
 				
 				header("Location: indexafterlogin.php");
