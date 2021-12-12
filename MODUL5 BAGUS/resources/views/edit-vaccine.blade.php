@@ -3,8 +3,8 @@
 @section('article')
     <div class="container">
         <div class="row">
-            <form action="{{ route('save-vaccine') }}"  method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form action="#"  method="post" enctype="multipart/form-data">
+{{--                {{ csrf_field() }}--}}
                 <div class="form-group" style="padding-top: 5px">
                     <label for="nameVaccine">Vaccine Name</label>
                     <input type="text" class="form-control" id="nameVaccine" name="vaccineName" required>

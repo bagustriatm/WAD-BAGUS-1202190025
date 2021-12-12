@@ -15,10 +15,10 @@ class CreateVaccinesTable extends Migration
     {
         Schema::create('vaccines', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('price');
-            $table->text('description');
-            $table->text('image');
+            $table->string('name', 255);
+            $table->string('price', 225);
+            $table->string('description',550);
+            $table->string('image', 255)->nullable();
             $table->timestamps();
         });
     }

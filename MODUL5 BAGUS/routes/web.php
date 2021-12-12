@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VaccinesController;
 
 Route::get('/', function () {
     return view('home',[
@@ -8,16 +9,12 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/vaccine', function () {
-    return view('vaccine',[
-        'title' => 'Vaccine'
-    ]);
-});
-Route::get('/form-vaccine', function () {
-    return view('form-vaccine',[
-        'title' => 'Add Vaccine'
-    ]);
-});
+Route::get('/vaccine', [VaccinesController::class, 'index'])->name('vaccine');
+Route::get('/form-vaccine', [VaccinesController::class, 'create'])->name('form-vaccine');
+Route::post('/save-vaccine', [VaccinesController::class, 'store'])->name('save-vaccine');
+Route::get('/delete-data-vaccine/{id}', [VaccinesController::class, 'destroy'])->name('delete-data-vaccine');
+
+Route::get('/edit-vaccine/{id}', [VaccinesController::class, 'edit'])->name('edit-vaccine');
 
 Route::get('/patient', function () {
     return view('patient',[
@@ -25,8 +22,8 @@ Route::get('/patient', function () {
     ]);
 });
 
-Route::get('/form-patient.blade.php', function () {
-    return view('form-patient.blade.php',[
+Route::get('/register-patient', function () {
+    return view('register-patient',[
         'title' => 'Add Patient'
     ]);
 });

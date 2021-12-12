@@ -3,6 +3,6 @@
 @section('article')
     <article class="text-center">
         <p>There is no data...</p>
-        <a href="/form-patient" class="btn btn-primary">Register Patient</a>
+        <a href="/register-patient" class="btn btn-primary">Register Patient</a>
     </article>
 @endsection
